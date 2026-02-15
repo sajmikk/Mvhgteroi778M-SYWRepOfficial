@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scanYourWeb - Website Security Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Syne:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <div class="lang-option" data-lang="en">
+            <span class="flag">🇬🇧</span>
+            <span class="lang-text">EN</span>
+        </div>
+        <div class="lang-toggle">
+            <input type="checkbox" id="langSwitch" />
+            <label for="langSwitch" class="lang-slider"></label>
+        </div>
+        <div class="lang-option" data-lang="cs">
+            <span class="flag">🇨🇿</span>
+            <span class="lang-text">CZ</span>
+        </div>
+    </div>
+
+    <!-- Animované pozadí -->
+    <div class="bg-grid"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span data-i18n="hero.badge">Free Security Tool</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">scan</span><span class="title-highlight">Your</span><span class="title-line">Web</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                Comprehensive security analysis for websites. 
+                Test SSL certificates, HTTP headers, and discover vulnerabilities in your web.
+            </p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span data-i18n="hero.download">Download Free</span>
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span data-i18n="hero.learn">Learn More</span>
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label" data-i18n="hero.free">% Free</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-label" data-i18n="hero.checks">Checks</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="0">0</div>
+                    <div class="stat-label" data-i18n="hero.viruses">Viruses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-accent">//</span> <span data-i18n="features.title">Features</span>
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.ssl.title">SSL Certificates</h3>
+                    <p data-i18n="features.ssl.desc">Check SSL/TLS certificate validity, expiration date, and security parameters.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.headers.title">HTTP Headers</h3>
+                    <p data-i18n="features.headers.desc">Analyze security headers like CSP, X-Frame-Options, HSTS, and more.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.scan.title">Security Scan</h3>
+                    <p data-i18n="features.scan.desc">Detect common vulnerabilities and security issues on websites.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.design.title">Simple Design</h3>
+                    <p data-i18n="features.design.desc">Clear CLI interface with colored output and easy navigation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.fast.title">Fast Analysis</h3>
+                    <p data-i18n="features.fast.desc">Results in seconds. No waiting, instant information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3 data-i18n="features.safe.title">100% Safe</h3>
+                    <p data-i18n="features.safe.desc">Open source tool without malware, spyware, or hidden features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download section -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-content">
+                    <h2 data-i18n="download.title">Ready to Start?</h2>
+                    <p data-i18n="download.subtitle">Download scanYourWeb and start testing website security in seconds.</p>
+                    <ul class="download-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="download.feature1">Python application</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="download.feature2">No dependencies installation</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span data-i18n="download.feature3">Ready to use immediately</span>
+                        </li>
+                    </ul>
+                    <a href="/download/scanYourWeb.zip" class="btn btn-download" download>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span data-i18n="download.button">Download scanYourWeb.zip</span>
+                    </a>
+                    <div class="download-notice">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                        <span data-i18n="download.notice">100% safe - Open source Python tool with no malware</span>
+                    </div>
+                </div>
+                <div class="download-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="window-dot"></span>
+                            <span class="window-dot"></span>
+                            <span class="window-dot"></span>
+                        </div>
+                        <div class="code-content">
+                            <code>
+<span class="code-comment"># Run scanYourWeb</span>
+<span class="code-keyword">python</span> scanYourWeb.py
+
+<span class="code-comment"># Enter URL</span>
+<span class="code-prompt">></span> https://example.com
+
+<span class="code-success">✓ SSL Certificate: Valid</span>
+<span class="code-success">✓ Security Headers: Good</span>
+<span class="code-warning">⚠ Missing HSTS</span>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chrome Warning Info -->
+            <div class="chrome-warning-box">
+                <div class="warning-icon">⚠️</div>
+                <div class="warning-content">
+                    <h3 data-i18n="download.warning.title">Browser Security Warning?</h3>
+                    <p data-i18n="download.warning.text">If your browser blocks the download, it's a false positive. The file is 100% safe.</p>
+                    <div class="warning-steps">
+                        <div class="warning-step">
+                            <span class="step-number">1</span>
+                            <span data-i18n="download.warning.step1">Click on the download arrow in your browser</span>
+                        </div>
+                        <div class="warning-step">
+                            <span class="step-number">2</span>
+                            <span data-i18n="download.warning.step2">Select "Keep" or "Keep anyway"</span>
+                        </div>
+                        <div class="warning-step">
+                            <span class="step-number">3</span>
+                            <span data-i18n="download.warning.step3">The file will download safely</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-accent">//</span> <span data-i18n="reviews.title">Reviews</span>
+            </h2>
+            
+            <!-- Form for new review -->
+            <div class="review-form-card">
+                <h3 data-i18n="reviews.form.title">Write Your Review</h3>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewName" data-i18n="reviews.form.name">Your Name</label>
+                        <input type="text" id="reviewName" data-i18n-placeholder="reviews.form.namePlaceholder" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewRating" data-i18n="reviews.form.rating">Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <span class="star" data-rating="1">★</span>
+                            <span class="star" data-rating="2">★</span>
+                            <span class="star" data-rating="3">★</span>
+                            <span class="star" data-rating="4">★</span>
+                            <span class="star" data-rating="5">★</span>
+                        </div>
+                        <input type="hidden" id="reviewRating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText" data-i18n="reviews.form.text">Your Review</label>
+                        <textarea id="reviewText" rows="4" data-i18n-placeholder="reviews.form.textPlaceholder" placeholder="What do you think about scanYourWeb?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        <span data-i18n="reviews.form.submit">Submit Review</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Reviews list -->
+            <div class="reviews-grid" id="reviewsList">
+                <!-- Reviews will be loaded via JS -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p data-i18n="reviews.loading">Loading reviews...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>scan<span>Your</span>Web</h3>
+                    <p data-i18n="footer.tagline">Security scanner for the modern web</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#features" data-i18n="footer.features">Features</a>
+                    <a href="#download" data-i18n="footer.download">Download</a>
+                    <a href="#reviews" data-i18n="footer.reviews">Reviews</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2026 scanYourWeb. Made with ❤️ in Czech Republic</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
