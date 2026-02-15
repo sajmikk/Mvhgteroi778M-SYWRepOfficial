@@ -80,7 +80,21 @@ const translations = {
             features: "Features",
             download: "Download",
             reviews: "Reviews",
+            discord: "Discord",
             copyright: "© 2026 scanYourWeb. Made with ❤️ in Czech Republic"
+        },
+        community: {
+            title: "Community",
+            discord: {
+                title: "Join Our Discord Server",
+                description: "Connect with other security enthusiasts, get help, share feedback, and stay updated with the latest features!"
+            },
+            feature1: "Active community",
+            feature2: "Get support & help",
+            feature3: "Share ideas & feedback"
+        },
+        discord: {
+            join: "Join Discord"
         }
     },
     cs: {
@@ -163,7 +177,21 @@ const translations = {
             features: "Funkce",
             download: "Stáhnout",
             reviews: "Recenze",
+            discord: "Discord",
             copyright: "© 2026 scanYourWeb. Vytvořeno s ❤️ v České Republice"
+        },
+        community: {
+            title: "Komunita",
+            discord: {
+                title: "Připoj se na náš Discord Server",
+                description: "Propoj se s dalšími bezpečnostními nadšenci, získej pomoc, sdílej zpětnou vazbu a buď v obraze s nejnovějšími funkcemi!"
+            },
+            feature1: "Aktivní komunita",
+            feature2: "Získej podporu a pomoc",
+            feature3: "Sdílej nápady a zpětnou vazbu"
+        },
+        discord: {
+            join: "Připoj se na Discord"
         }
     }
 };
