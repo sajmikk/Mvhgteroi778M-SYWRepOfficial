@@ -89,7 +89,7 @@ const translations = {
                 title: "Join Our Discord Server",
                 description: "Connect with other security enthusiasts, get help, share feedback, and stay updated with the latest features!"
             },
-            feature1: "Active community",
+            feature1: "You can find the source code on our discord.",
             feature2: "Get support & help",
             feature3: "Share ideas & feedback"
         },
